@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  rag-api:
+    build: .
+    ports:
+      - "5100:5100"
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app/app
+      - ./faiss_index:/app/faiss_index
+      - ./documento.md:/app/documento.md
